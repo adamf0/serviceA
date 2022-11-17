@@ -1,0 +1,6 @@
+php artisan queue:retry all
+php artisan queue:work
+https://stackoverflow.com/questions/25572907/using-gmail-smtp-via-laravel-connection-could-not-be-established-with-host-smtp
+docker build -t app -f app.Dockerfile .
+docker compose up -d
+docker compose down
