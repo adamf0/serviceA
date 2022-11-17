@@ -26,7 +26,10 @@ RUN apt-get update && apt-get install -y \
     git \
     curl \
     lua-zlib-dev \
-    libmemcached-dev 
+    libmemcached-dev \ 
+    vim \ 
+    nano \ 
+    iputils-ping
 
 # Install supervisor
 RUN apt-get install -y supervisor
@@ -60,6 +63,9 @@ RUN cp docker/supervisor.conf /etc/supervisord.conf
 
 # COPY ./docker/run.sh /tmp    
 # ENTRYPOINT ["/tmp/run.sh"]
+
+RUN composer update
+RUN composer install
 
 # Change current user to www
 USER www

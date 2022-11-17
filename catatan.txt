@@ -1,6 +1,14 @@
 php artisan queue:retry all
 php artisan queue:work
+
+//// error solving ////
 https://stackoverflow.com/questions/25572907/using-gmail-smtp-via-laravel-connection-could-not-be-established-with-host-smtp
+https://github.com/tymondesigns/jwt-auth/issues/1102#issuecomment-296712123
+https://forums.docker.com/t/running-composer-install-when-container-is-created/119777
+///// tidak wajib
+https://www.codementor.io/@chiemelachinedum/steps-to-enable-cors-on-a-lumen-api-backend-e5a0s1ecx
+/////
+
 docker build -t app -f app.Dockerfile .
 docker compose up -d
 docker compose down

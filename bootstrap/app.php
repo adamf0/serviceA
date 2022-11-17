@@ -6,7 +6,7 @@ require_once __DIR__.'/../vendor/autoload.php';
     dirname(__DIR__)
 ))->bootstrap();
 
-date_default_timezone_set(env('APP_TIMEZONE', 'UTC'));
+date_default_timezone_set(env('APP_TIMEZONE', 'Asia/Jakarta'));
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +24,9 @@ $app = new Laravel\Lumen\Application(
 );
 
 $app->withFacades(true, [
-    'Illuminate\Support\Facades\Mail' => 'Mail'
+    'Illuminate\Support\Facades\Mail' => 'Mail',
+    'Tymon\JWTAuth\Facades\JWTAuth' => 'JWTAuth',
+    'Tymon\JWTAuth\Facades\JWTFactory' => 'JWTFactory'
 ]);
 $app->withEloquent();
 
