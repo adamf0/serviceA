@@ -12,3 +12,8 @@ https://www.codementor.io/@chiemelachinedum/steps-to-enable-cors-on-a-lumen-api-
 docker build -t app -f app.Dockerfile .
 docker compose up -d
 docker compose down
+
+cara push image:
+docker tag 86a87de772df adamilkom00/app1:0.1.0
+docker push adamilkom00/app1:0.1.0
+

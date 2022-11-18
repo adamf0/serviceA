@@ -4,6 +4,7 @@
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
 use Laravel\Lumen\Routing\Router;
 
 /*
@@ -32,6 +33,9 @@ $router->get('/', function () use ($router) {
 //         ]);
 //     });
 // });
-$router->post('/auth/login', 'AuthController@postLogin');
+$router->post('/auth/login', 'AuthController@doLogin');
+$router->get('/auth/decode', function (Request $request) use ($router) {
+    return response()->json(auth()->user());
+});
 $router->get('/users', 'UsersController@index');
 $router->post('/users/store', 'UsersController@store');

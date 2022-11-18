@@ -53,8 +53,11 @@ COPY --chown=www:www . /var/www
 # add root to www group
 RUN chmod -R ug+w /var/www/storage
 
+# Change current user to www
+USER www
+
 # # Copy supervisor configs
-RUN cp docker/supervisor.conf /etc/supervisord.conf
+# RUN cp docker/supervisor.conf /etc/supervisord.conf
 
 # # PHP Error Log Files
 # RUN mkdir /var/log/php
@@ -66,9 +69,6 @@ RUN cp docker/supervisor.conf /etc/supervisord.conf
 
 RUN composer update
 RUN composer install
-
-# Change current user to www
-USER www
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
